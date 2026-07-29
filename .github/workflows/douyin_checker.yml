@@ -43,5 +43,5 @@ jobs:
       - name: Commit and Push State
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update live status to state.json [skip ci]"
+          commit_message: "chore: update live status to state.json"
           file_pattern: "state.json"
