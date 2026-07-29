@@ -1,6 +1,8 @@
 import os
 import requests
 import json
+import time       # 1. 新增 time
+import random     # 2. 新增 random
 from datetime import datetime
 from playwright.sync_api import sync_playwright
 
@@ -91,7 +93,9 @@ def main():
     if not ROOM_IDs or not WEBHOOK_URLs: # 這裡改為 WEBHOOK_URLs
         print("缺少必要的環境變數！請確認 Github Secrets 設定。")
         return
-
+    delay = random.randint(0, 300)
+    print(f"為避免觸發防爬蟲機制，本次隨機等待 {delay} 秒後再開始偵測...")
+    time.sleep(delay)
     # 2. 讀取舊有狀態，並處理格式升級
     state = {}
     if os.path.exists(STATE_FILE):
