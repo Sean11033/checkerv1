@@ -1,4 +1,4 @@
-name: Douyin Live Checker (Playwright)
+name: Douyin Live Checker (API Intercept)
 
 on:
   schedule:
@@ -9,7 +9,7 @@ jobs:
   check-live:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # 允許 Action 寫回 state.json
 
     steps:
       - name: Checkout Repository
@@ -35,8 +35,9 @@ jobs:
           DOUYIN_ROOM_ID: ${{ secrets.DOUYIN_ROOM_ID }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python check_live.py
+
       - name: Commit and Push State
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: update live status [skip ci]"
+          commit_message: "chore: update live status to state.json [skip ci]"
           file_pattern: "state.json"
