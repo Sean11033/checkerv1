@@ -11,7 +11,8 @@ if os.environ.get("DOUYIN_ROOM_ID"):
 if os.environ.get("DOUYIN_ROOM_ID2"):
     ROOM_IDs.append(os.environ.get("DOUYIN_ROOM_ID2"))
 
-WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
+webhook_env = os.environ.get("DISCORD_WEBHOOK_URL", "")
+WEBHOOK_URLs = [url.strip() for url in webhook_env.split(",") if url.strip()]
 STATE_FILE = "state.json"
 
 def check_single_room(browser, room_id):
@@ -76,10 +77,18 @@ def send_discord_notify(room_id, title, nickname):
     payload = {
         "content": f"🔴 **{nickname}** 開播啦！\n**標題**：{display_title}\n**傳送門**：{live_url}"
     }
-    requests.post(WEBHOOK_URL, json=payload)
+    
+    # 迴圈發送給所有設定的 Webhook
+    for webhook in WEBHOOK_URLs:
+        try:
+            requests.post(webhook, json=payload, timeout=10)
+            # 印出前 40 個字元作為 log 紀錄，避免完整 URL 洩漏
+            print(f"[{room_id}] 已推播至 Webhook: {webhook[:40]}...") 
+        except Exception as e:
+            print(f"[{room_id}] ⚠️ 推播至 Webhook 失敗: {e}")
 
 def main():
-    if not ROOM_IDs or not WEBHOOK_URL:
+if not ROOM_IDs or not WEBHOOK_URLs: # 這裡改為 WEBHOOK_URLs
         print("缺少必要的環境變數！請確認 Github Secrets 設定。")
         return
 
