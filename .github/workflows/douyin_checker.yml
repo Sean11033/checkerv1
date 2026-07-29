@@ -2,7 +2,7 @@ name: Douyin Live Checker (API Intercept)
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/16 * * * *'
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
