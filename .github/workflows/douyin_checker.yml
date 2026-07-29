@@ -36,7 +36,7 @@ jobs:
         env:
           # 將兩個房間 ID 都作為環境變數注入
           DOUYIN_ROOM_ID: ${{ secrets.DOUYIN_ROOM_ID }}
-          DOUYIN_ROOM_ID2: ${{ secrets.DOUYIN_ROOM_ID2 }}
+          #DOUYIN_ROOM_ID2: ${{ secrets.DOUYIN_ROOM_ID2 }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: python check_live.py
 
