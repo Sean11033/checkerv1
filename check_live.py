@@ -88,7 +88,7 @@ def send_discord_notify(room_id, title, nickname):
             print(f"[{room_id}] ⚠️ 推播至 Webhook 失敗: {e}")
 
 def main():
-if not ROOM_IDs or not WEBHOOK_URLs: # 這裡改為 WEBHOOK_URLs
+    if not ROOM_IDs or not WEBHOOK_URLs: # 這裡改為 WEBHOOK_URLs
         print("缺少必要的環境變數！請確認 Github Secrets 設定。")
         return
 
