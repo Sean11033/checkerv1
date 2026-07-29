@@ -1,7 +1,16 @@
 {
-  "is_live": true,
-  "nickname": "主播",
-  "last_title": "",
-  "last_checked": "2026-07-29 00:52:16",
-  "last_error": ""
+  "302483748533": {
+    "is_live": false,
+    "nickname": "",
+    "last_title": "",
+    "last_checked": "2026-07-29 01:24:39",
+    "last_error": "未攔截到狀態 API，可能是遇到 WAF 攔截或網頁載入失敗"
+  },
+  "889267961503": {
+    "is_live": true,
+    "nickname": "金予暖☀️⁹²³",
+    "last_title": "台灣 桃园 好相处",
+    "last_checked": "2026-07-29 01:24:39",
+    "last_error": ""
+  }
 }
