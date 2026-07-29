@@ -1,10 +1,10 @@
 {
   "302483748533": {
-    "is_live": false,
-    "nickname": "",
-    "last_title": "",
-    "last_checked": "2026-07-29 12:14:30",
-    "last_error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://live.douyin.com/302483748533\", waiting until \"load\"\n"
+    "is_live": true,
+    "nickname": "皮卡丘",
+    "last_title": "皮卡丘正在直播",
+    "last_checked": "2026-07-29 12:29:51",
+    "last_error": ""
   },
   "889267961503": {
     "is_live": true,
