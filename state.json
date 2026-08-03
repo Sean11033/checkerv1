@@ -3,7 +3,7 @@
     "is_live": false,
     "nickname": "皮卡丘",
     "last_title": "皮卡丘正在直播",
-    "last_checked": "2026-08-03 13:05:37",
+    "last_checked": "2026-08-03 13:16:34",
     "last_error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://live.douyin.com/302483748533\", waiting until \"load\"\n"
   }
 }
