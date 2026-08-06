@@ -77,7 +77,7 @@ def send_discord_notify(room_id, title, nickname):
     display_title = title if title else "（未設定標題）"
     
     payload = {
-        "content": f" @everyone 🔴 **{nickname}** 開播啦！\n**標題**：{display_title}\n**傳送門**：{live_url}"
+        "content": f" everyone 🔴 **{nickname}** 開播啦！\n**標題**：{display_title}\n**傳送門**：{live_url}"
     }
     
     # 迴圈發送給所有設定的 Webhook
