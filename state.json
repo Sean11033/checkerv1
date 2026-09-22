@@ -3,7 +3,7 @@
     "is_live": false,
     "nickname": "皮卡丘",
     "last_title": "湾湾皮卡丘⚡️",
-    "last_checked": "2026-09-22 20:47:14",
+    "last_checked": "2026-09-22 21:04:39",
     "last_error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://live.douyin.com/302483748533\", waiting until \"load\"\n"
   }
 }
